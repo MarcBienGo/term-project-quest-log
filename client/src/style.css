@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Cinzel:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Press+Start+2P&display=swap');
+
+body {
+  background: linear-gradient(300deg, #7D0A0A, #BF3131, #EAD196);
+  background-size: 180% 180%;
+  animation: gradient-animation 5s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+      background-position: 0% 50%;
+  }
+
+  50% {
+      background-position: 100% 50%;
+  }
+
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+.game-header {
+  border-bottom: 3px solid #ea96a4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.game-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 4px #000;
+  letter-spacing: 1px;
+}
+
+.pixel-font {
+  font-family: 'Press Start 2P', cursive;
+  margin-right: 10px;
+}
+
+.nav-link {
+  font-family: 'Agdasima', sans-serif;
+  font-size: 1.2rem;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #BF3131 !important;
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  color: #BF3131 !important;
+  border-bottom: 2px solid #BF3131;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card {
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.page-container {
+  background-color: #fff6e7;
+  border: 5px solid #393E46;
+  box-shadow: 10px 10px;
+  border-radius: 20px;
+  margin: 20px;
+  min-height: calc(100vh - 40px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding-top: 1em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.body-content {
+  flex: 1;
+  padding-bottom: 20px;
+}
+
+.agdasima-bold {
+  font-family: "Agdasima", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.input-label {
+  font-size: x-large;
+}

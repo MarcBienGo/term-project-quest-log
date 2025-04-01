@@ -1,0 +1,103 @@
+@import "https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Cinzel:wght@400..900&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Press+Start+2P&display=swap";
+body {
+  background: linear-gradient(300deg, #7d0a0a, #bf3131, #ead196) 0 0 / 180% 180%;
+  animation: 5s infinite gradient-animation;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0%;
+  }
+
+  50% {
+    background-position: 100%;
+  }
+
+  100% {
+    background-position: 0%;
+  }
+}
+
+.game-header {
+  border-bottom: 3px solid #ea96a4;
+  box-shadow: 0 4px 8px #0000004d;
+}
+
+.game-title {
+  text-shadow: 2px 2px 4px #000;
+  letter-spacing: 1px;
+  font-family: Cinzel, serif;
+  font-size: 1.8rem;
+}
+
+.pixel-font {
+  margin-right: 10px;
+  font-family: "Press Start 2P", cursive;
+}
+
+.nav-link {
+  margin: 0 10px;
+  font-family: Agdasima, sans-serif;
+  font-size: 1.2rem;
+  transition: all .3s;
+}
+
+.nav-link:hover {
+  transform: translateY(-2px);
+  color: #bf3131 !important;
+}
+
+.nav-link.active {
+  border-bottom: 2px solid #bf3131;
+  color: #bf3131 !important;
+}
+
+.card:hover {
+  transition: all .3s;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px #0000001a;
+}
+
+.card {
+  height: 100%;
+  transition: all .3s;
+}
+
+.page-container {
+  background-color: #fff6e7;
+  border: 5px solid #393e46;
+  border-radius: 20px;
+  flex-direction: column;
+  min-height: calc(100vh - 40px);
+  margin: 20px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 10px 10px;
+}
+
+.header {
+  text-align: center;
+  width: 100%;
+  padding-top: 1em;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.body-content {
+  flex: 1;
+  padding-bottom: 20px;
+}
+
+.agdasima-bold {
+  font-family: Agdasima, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.input-label {
+  font-size: x-large;
+}
+/*# sourceMappingURL=style.css.map */
