@@ -1,4 +1,5 @@
 import { database } from "../database.js";
+import { ObjectId } from 'mongodb';
 
 const postGames = async (req, res) => {
   try {
@@ -30,6 +31,36 @@ const getGames = async (req, res) => {
     const gamesCollection = database.collection("Games");
     const games = await gamesCollection.find().toArray();
     res.json(games);
+  } catch (error) {
+    console.error("Full error:", {
+      message: error.message,
+      stack: error.stack,
+    });
+
+    res.status(500).json({
+      error: "Database operation failed",
+      details: error.message,
+    });
+  }
+};
+
+const getGameById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const gamesCollection = database.collection("Games");
+    
+    // Check if the ID is valid (optional but recommended)
+    if (!id || id.length !== 24) {
+      return res.status(400).json({ error: "Invalid game ID" });
+    }
+
+    const game = await gamesCollection.findOne({ _id: new ObjectId(id) });
+    
+    if (!game) {
+      return res.status(404).json({ error: "Game not found" });
+    }
+
+    res.json(game);
   } catch (error) {
     console.error("Full error:", {
       message: error.message,
@@ -83,4 +114,4 @@ const searchGames = async (req, res) => {
   }
 };
 
-export { postGames, getGames, searchGames };
+export { postGames, getGames, getGameById, searchGames };
