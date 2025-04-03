@@ -95,7 +95,7 @@ const searchGames = async (req, res) => {
     }
 
     if (company) {
-      $regex: new RegExp(`^${company}$`, "i");
+      query.company = {$regex: new RegExp(`^${company}$`, "i")};
     }
 
     if (ageRating) {
