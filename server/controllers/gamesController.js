@@ -76,7 +76,7 @@ const getGameById = async (req, res) => {
 
 const searchGames = async (req, res) => {
   try {
-    const { title, genres, platforms, releaseYear, ageRating } = req.query;
+    const { title, genres, platforms, releaseYear, company, ageRating } = req.query;
     const query = {};
     if (title) {
       query.title = { $regex: title, $options: "i" };
@@ -92,6 +92,10 @@ const searchGames = async (req, res) => {
 
     if (releaseYear) {
       query.releaseYear = parseInt(releaseYear, 10);
+    }
+
+    if (company) {
+      query.company = { $regex: company, $options: "i" };
     }
 
     if (ageRating) {
