@@ -6,7 +6,7 @@ const gamesRouter = express.Router();
 
 gamesRouter.post('/', validateGame, postGames);
 gamesRouter.get('/', getGames);
-gamesRouter.get('/:id', getGameById);
 gamesRouter.get('/search', searchGames);
+gamesRouter.get('/:id', getGameById);
 
 export default gamesRouter;
